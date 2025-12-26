@@ -6,7 +6,6 @@
     <title>geographyCORE</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Reset and base styles */
         * {
             margin: 0;
             padding: 0;
@@ -25,7 +24,6 @@
             padding: 0 20px;
         }
 
-        /* Navbar styles */
         .navbar {
             background-color: #474A48; /* Slightly lighter dark green */
             padding: 1rem 0;
@@ -41,11 +39,10 @@
         }
         .navbar .logo {
             font-size: 1.5rem;
-            font-weight: 700; /* Bolder for logo */
-            color: #9AE19D; /* Light green accent */
+            font-weight: 700;
+            color: #9AE19D;
         }
 
-        /* Hamburger menu for mobile */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -59,16 +56,23 @@
             transition: 0.3s;
         }
         .hamburger.active span:nth-child(1) {
+            -webkit-transform: rotate(-45deg) translate(-5px, 6px);
+            -moz-transform: rotate(-45deg) translate(-5px, 6px);
+            -ms-transform: rotate(-45deg) translate(-5px, 6px);
+            -o-transform: rotate(-45deg) translate(-5px, 6px);
             transform: rotate(-45deg) translate(-5px, 6px);
         }
         .hamburger.active span:nth-child(2) {
             opacity: 0;
         }
         .hamburger.active span:nth-child(3) {
+            -webkit-transform: rotate(45deg) translate(-5px, -6px);
+            -moz-transform: rotate(45deg) translate(-5px, -6px);
+            -ms-transform: rotate(45deg) translate(-5px, -6px);
+            -o-transform: rotate(45deg) translate(-5px, -6px);
             transform: rotate(45deg) translate(-5px, -6px);
         }
 
-        /* Desktop nav links */
         .navbar .nav-links {
             display: flex;
             list-style: none;
@@ -79,7 +83,7 @@
         .navbar .nav-links a {
             color: #909590;
             text-decoration: none;
-            font-weight: 600; /* Slightly bolder for links */
+            font-weight: 600;
             transition: color 0.3s;
         }
         .navbar .nav-links a:hover {
@@ -136,7 +140,6 @@
             margin-top: 1rem;
         }
 
-        /* Main content placeholder */
         .main-content {
             padding: 2rem 0;
             text-align: center;
@@ -144,14 +147,13 @@
         .main-content h1 {
             color: #9AE19D;
             margin-bottom: 1rem;
-            font-weight: 700; /* Bolder heading */
+            font-weight: 700;
         }
         .main-content p {
             color: #909590;
             font-weight: 400;
         }
 
-        /* Responsive design */
         @media (max-width: 768px) {
             .hamburger {
                 display: flex;
@@ -164,6 +166,17 @@
             }
         }
     </style>
+    <script defer>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            hamburger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+        });
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -176,9 +189,9 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Maps</a></li>
-                <li><a href="#">Countries</a></li>
-                <li><a href="#">Resources</a></li>
+                <li><a href="#">Content</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
             <div class="auth-buttons">
                 <button>Login</button>
@@ -188,9 +201,9 @@
         <div class="mobile-menu" id="mobile-menu">
             <ul class="nav-links">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Maps</a></li>
-                <li><a href="#">Countries</a></li>
-                <li><a href="#">Resources</a></li>
+                <li><a href="#">Content</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
             <div class="auth-buttons">
                 <button>Login</button>
@@ -204,16 +217,5 @@
         <p>This is the base for a geography website. Explore maps, countries, and more!</p>
         <!-- Add more content here as the site develops -->
     </main>
-
-    <script>
-        // Toggle mobile menu
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
-    </script>
 </body>
 </html>

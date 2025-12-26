@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geography Hub</title>
+    <title>geographyCORE</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         /* Reset and base styles */
@@ -44,6 +44,31 @@
             font-weight: 700; /* Bolder for logo */
             color: #9AE19D; /* Light green accent */
         }
+
+        /* Hamburger menu for mobile */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #909590;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Desktop nav links */
         .navbar .nav-links {
             display: flex;
             list-style: none;
@@ -60,6 +85,8 @@
         .navbar .nav-links a:hover {
             color: #9AE19D;
         }
+
+        /* Auth buttons for desktop */
         .navbar .auth-buttons {
             display: flex;
             gap: 1rem;
@@ -79,6 +106,36 @@
             background-color: #909590; /* Grayish green on hover */
         }
 
+        /* Mobile menu */
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #474A48;
+            flex-direction: column;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .mobile-menu.active {
+            display: flex;
+        }
+        .mobile-menu .nav-links {
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        .mobile-menu .nav-links li {
+            margin: 0.5rem 0;
+        }
+        .mobile-menu .auth-buttons {
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
         /* Main content placeholder */
         .main-content {
             padding: 2rem 0;
@@ -96,20 +153,14 @@
 
         /* Responsive design */
         @media (max-width: 768px) {
-            .navbar .container {
-                flex-direction: column;
-                align-items: stretch;
+            .hamburger {
+                display: flex;
             }
             .navbar .nav-links {
-                margin-top: 1rem;
-                justify-content: center;
-            }
-            .navbar .nav-links li {
-                margin: 0 1rem;
+                display: none;
             }
             .navbar .auth-buttons {
-                margin-top: 1rem;
-                justify-content: center;
+                display: none;
             }
         }
     </style>
@@ -117,7 +168,24 @@
 <body>
     <nav class="navbar">
         <div class="container">
-            <div class="logo">Geography Hub</div>
+            <div class="logo">geographyCORE</div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Maps</a></li>
+                <li><a href="#">Countries</a></li>
+                <li><a href="#">Resources</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button>Login</button>
+                <button>Sign Up</button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
             <ul class="nav-links">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Maps</a></li>
@@ -132,14 +200,20 @@
     </nav>
 
     <main class="container main-content">
-        <h1>Welcome to Geography Hub</h1>
+        <h1>Welcome to geographyCORE</h1>
         <p>This is the base for a geography website. Explore maps, countries, and more!</p>
         <!-- Add more content here as the site develops -->
     </main>
 
     <script>
-        // Placeholder for future JavaScript functionality
-        // For example, handling login/signup modals or dynamic content
+        // Toggle mobile menu
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
     </script>
 </body>
 </html>

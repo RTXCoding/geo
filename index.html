@@ -14,8 +14,8 @@
         body {
             font-family: 'Poppins', sans-serif;
             font-weight: 400;
-            background-color: #2C302E; /* Dark green background */
-            color: #909590; /* Grayish green text */
+            background-color: #2C302E;
+            color: #909590;
             line-height: 1.6;
         }
         .container {
@@ -25,17 +25,20 @@
         }
 
         .navbar {
-            background-color: #474A48; /* Slightly lighter dark green */
+            background-color: #474A48;
             padding: 1rem 0;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 100;
         }
-        .navbar .container {
+        .navbar-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         .navbar .logo {
             font-size: 1.5rem;
@@ -56,74 +59,58 @@
             transition: 0.3s;
         }
         .hamburger.active span:nth-child(1) {
-            -webkit-transform: rotate(-45deg) translate(-5px, 6px);
-            -moz-transform: rotate(-45deg) translate(-5px, 6px);
-            -ms-transform: rotate(-45deg) translate(-5px, 6px);
-            -o-transform: rotate(-45deg) translate(-5px, 6px);
             transform: rotate(-45deg) translate(-5px, 6px);
         }
         .hamburger.active span:nth-child(2) {
             opacity: 0;
         }
         .hamburger.active span:nth-child(3) {
-            -webkit-transform: rotate(45deg) translate(-5px, -6px);
-            -moz-transform: rotate(45deg) translate(-5px, -6px);
-            -ms-transform: rotate(45deg) translate(-5px, -6px);
-            -o-transform: rotate(45deg) translate(-5px, -6px);
             transform: rotate(45deg) translate(-5px, -6px);
         }
 
-        .navbar .nav-links {
+        .nav-links {
             display: flex;
             list-style: none;
         }
-        .navbar .nav-links li {
+        .nav-links li {
             margin-left: 2rem;
         }
-        .navbar .nav-links a {
+        .nav-links a {
             color: #909590;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s;
         }
-        .navbar .nav-links a:hover {
+        .nav-links a:hover {
             color: #9AE19D;
         }
 
-        /* Auth buttons for desktop */
-        .navbar .auth-buttons {
+        .auth-buttons {
             display: flex;
             gap: 1rem;
         }
-        .navbar .auth-buttons button {
-            background-color: #9AE19D; /* Light green */
+        .auth-buttons button {
+            background-color: #9AE19D;
             color: #2C302E;
             border: none;
             padding: 0.5rem 1rem;
             border-radius: 5px;
             cursor: pointer;
-            font-weight: 700; /* Bolder buttons */
+            font-weight: 700;
             font-family: 'Poppins', sans-serif;
             transition: background-color 0.3s;
         }
-        .navbar .auth-buttons button:hover {
-            background-color: #909590; /* Grayish green on hover */
+        .auth-buttons button:hover {
+            background-color: #909590;
         }
 
-        /* Mobile menu */
         .mobile-menu {
             display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
             background-color: #474A48;
-            flex-direction: column;
             padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .mobile-menu.active {
-            display: flex;
+            display: block;
         }
         .mobile-menu .nav-links {
             flex-direction: column;
@@ -138,6 +125,9 @@
             align-items: center;
             gap: 0.5rem;
             margin-top: 1rem;
+        }
+        .mobile-menu .auth-buttons button {
+            width: 200px;
         }
 
         .main-content {
@@ -158,29 +148,18 @@
             .hamburger {
                 display: flex;
             }
-            .navbar .nav-links {
+            .nav-links {
                 display: none;
             }
-            .navbar .auth-buttons {
+            .auth-buttons {
                 display: none;
             }
         }
     </style>
-    <script defer>
-        document.addEventListener('DOMContentLoaded', function() {
-            const hamburger = document.getElementById('hamburger');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            hamburger.addEventListener('click', function() {
-                this.classList.toggle('active');
-                mobileMenu.classList.toggle('active');
-            });
-        });
-    </script>
 </head>
 <body>
     <nav class="navbar">
-        <div class="container">
+        <div class="navbar-container">
             <div class="logo">geographyCORE</div>
             <div class="hamburger" id="hamburger">
                 <span></span>
@@ -215,7 +194,18 @@
     <main class="container main-content">
         <h1>Welcome to geographyCORE</h1>
         <p>This is the base for a geography website. Explore maps, countries, and more!</p>
-        <!-- Add more content here as the site develops -->
     </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            hamburger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>

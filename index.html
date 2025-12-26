@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geography Hub</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #2C302E; /* Dark green background */
+            color: #909590; /* Grayish green text */
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            background-color: #474A48; /* Slightly lighter dark green */
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #9AE19D; /* Light green accent */
+        }
+        .navbar .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .navbar .nav-links li {
+            margin-left: 2rem;
+        }
+        .navbar .nav-links a {
+            color: #909590;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .navbar .nav-links a:hover {
+            color: #9AE19D;
+        }
+        .navbar .auth-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        .navbar .auth-buttons button {
+            background-color: #9AE19D; /* Light green */
+            color: #2C302E;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .navbar .auth-buttons button:hover {
+            background-color: #909590; /* Grayish green on hover */
+        }
+
+        /* Main content placeholder */
+        .main-content {
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .main-content h1 {
+            color: #9AE19D;
+            margin-bottom: 1rem;
+        }
+        .main-content p {
+            color: #909590;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .navbar .container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .navbar .nav-links {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+            .navbar .nav-links li {
+                margin: 0 1rem;
+            }
+            .navbar .auth-buttons {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Geography Hub</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Maps</a></li>
+                <li><a href="#">Countries</a></li>
+                <li><a href="#">Resources</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button>Login</button>
+                <button>Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container main-content">
+        <h1>Welcome to Geography Hub</h1>
+        <p>This is the base for a geography website. Explore maps, countries, and more!</p>
+        <!-- Add more content here as the site develops -->
+    </main>
+
+    <script>
+        // Placeholder for future JavaScript functionality
+        // For example, handling login/signup modals or dynamic content
+    </script>
+</body>
+</html>
